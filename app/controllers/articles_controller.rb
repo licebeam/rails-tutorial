@@ -17,6 +17,11 @@ class ArticlesController < ApplicationController
     redirect_to @article
   end
 
+  def update
+    @article = Article.update(article_params)
+    redirect_to @article
+  end
+  
   def destroy
     @article = Article.find(params[:id])
     @article.destroy
